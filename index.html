@@ -66,7 +66,7 @@
             background-color: var(--primary);
             color: var(--white);
             padding: 15px 35px;
-            border-radius: 50px; /* Runde, weiche Buttons */
+            border-radius: 50px;
             font-family: 'Lato', sans-serif;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -82,17 +82,6 @@
             background-color: var(--primary-hover);
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(176, 141, 85, 0.3);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-        
-        .btn-outline:hover {
-            background-color: var(--primary);
-            color: var(--white);
         }
 
         /* --- HEADER --- */
@@ -122,9 +111,9 @@
         .hero {
             height: 100vh;
             min-height: 700px;
-            background-color: #E8E4DC; /* Fallback Farbe */
-            /* HIER BILD EINFÜGEN: url('dein-bild.jpg') */
-            background-image: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.7)); 
+            background-color: #E8E4DC;
+            /* HIER WIRD DEIN HINTERGRUNDBILD GELADEN */
+            background-image: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.7)), url('hero-bg.png');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -137,21 +126,21 @@
         .hero-content {
             max-width: 800px;
             padding: 40px;
-            /* Glas-Effekt für bessere Lesbarkeit */
-            background: rgba(255, 255, 255, 0.3); 
-            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.4); 
+            backdrop-filter: blur(8px);
             border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.5);
+            border: 1px solid rgba(255,255,255,0.6);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
         .subline {
             font-size: 1.3rem;
             margin-bottom: 40px;
-            color: #555;
-            font-weight: 300;
+            color: #444;
+            font-weight: 400;
         }
 
-        /* --- INTRO / PROBLEM --- */
+        /* --- SECTIONS --- */
         .section {
             padding: 100px 0;
         }
@@ -164,7 +153,28 @@
 
         .intro p {
             margin-bottom: 20px;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
+            color: #555;
+        }
+
+        /* --- TRENNER BILD (PARALLAX) --- */
+        .image-break {
+            height: 400px;
+            /* HIER WIRD DEIN TRENNER-BILD GELADEN */
+            background-image: url('separator.png'); 
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            margin: 0;
+            position: relative;
+        }
+        
+        /* Ein zarter Overlay über dem Trennerbild */
+        .image-break::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(176, 141, 85, 0.1); /* Leichter Goldstich */
         }
 
         /* --- METHODE (Authority) --- */
@@ -199,21 +209,38 @@
             top: -8px;
         }
 
+        /* --- PROFILBILD & ZITAT --- */
+        .method-quote {
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 3px solid var(--primary);
+            object-fit: cover;
+            display: block;
+            margin: 0 auto 25px auto;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
         .quote-box {
             background-color: var(--white);
-            padding: 40px;
+            padding: 30px;
             border-radius: 4px;
             border-left: 4px solid var(--primary);
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-style: italic;
             box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            position: relative;
         }
 
         /* --- ANGEBOTE --- */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
             margin-top: 50px;
         }
@@ -222,19 +249,19 @@
             background: var(--white);
             padding: 40px 30px;
             border-radius: 8px;
-            transition: transform 0.3s;
-            border: 1px solid #eee;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #f0f0f0;
             text-align: center;
         }
 
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
             border-color: var(--primary);
         }
 
         .service-icon {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: var(--primary);
             margin-bottom: 20px;
             font-family: 'Cormorant Garamond', serif;
@@ -246,11 +273,19 @@
             text-align: center;
         }
 
+        .price-box {
+            background: var(--white);
+            display: inline-block;
+            padding: 30px 50px;
+            border-radius: 8px;
+            border: 1px solid var(--primary);
+            margin: 30px 0;
+        }
+
         .price-highlight {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: var(--primary);
             font-weight: 700;
-            margin: 20px 0;
             font-family: 'Cormorant Garamond', serif;
         }
 
@@ -258,7 +293,7 @@
         .contact {
             text-align: center;
             background-color: #2C2C2C;
-            color: var(--bg-light);
+            color: #e0e0e0;
         }
         
         .contact h2 { color: var(--bg-light); }
@@ -270,11 +305,17 @@
 
         .contact-info a {
             color: var(--primary);
-            text-decoration: underline;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+        
+        .contact-info a:hover {
+            border-bottom-color: var(--primary);
         }
 
         footer {
-            margin-top: 50px;
+            margin-top: 80px;
             padding-top: 20px;
             border-top: 1px solid #444;
             font-size: 0.9rem;
@@ -286,8 +327,8 @@
             h1 { font-size: 2.5rem; }
             h2 { font-size: 2rem; }
             .method-grid { grid-template-columns: 1fr; }
-            .hero-content { padding: 20px; }
-            .nav-links { display: none; } /* Vereinfachung für Mobile */
+            .hero-content { padding: 25px; margin: 0 15px; }
+            .image-break { height: 250px; background-attachment: scroll; } /* Fix für Mobile Performance */
         }
     </style>
 </head>
@@ -298,7 +339,6 @@
         <div class="container">
             <nav>
                 <div class="logo">ALEXANDER BOLZ | TANTRA<span style="color:var(--primary)">SOMA</span></div>
-                <!-- Optional: Navigation Links hier einfügen -->
             </nav>
         </div>
     </header>
@@ -327,6 +367,9 @@
         </div>
     </section>
 
+    <!-- Visueller Trenner (Bild) -->
+    <div class="image-break"></div>
+
     <!-- Methode / Authority -->
     <section class="section method">
         <div class="container">
@@ -340,7 +383,13 @@
                         <li><strong>Konsens & Grenzen:</strong> Jede Session ist ein Dialog. Grenzen schaffen den Raum, in dem sich wahre Hingabe erst entfalten kann.</li>
                     </ul>
                 </div>
+                
+                <!-- Profilbild & Zitat -->
                 <div class="method-quote">
+                    <!-- HIER WIRD DEIN PROFILBILD GELADEN -->
+                    <!-- Achte darauf, dass dein Bild wirklich .jpg heißt, sonst ändere es in .png -->
+                    <img src="alexander-profil.jpg" alt="Alexander Bolz" class="profile-image">
+                    
                     <div class="quote-box">
                         "In meinen Sessions bin ich weniger 'Macher' als Begleiter. Es ist mir wichtig, Menschen nicht zu reparieren, sondern sie darin zu unterstützen, ihre eigene Stimme und innere Führung wiederzufinden."
                     </div>
@@ -353,7 +402,7 @@
     <section class="section" id="angebote">
         <div class="container">
             <h2>Meine Angebote</h2>
-            <p style="text-align: center; max-width: 700px; margin: 0 auto 40px auto;">
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 40px auto; color: #666;">
                 Jede Session ist ein individuelles Ritual (ca. 3 Stunden). Wir entscheiden im Vorgespräch, welches Setting für dich passt.
             </p>
             
@@ -387,7 +436,7 @@
                 </div>
             </div>
             
-            <div style="text-align: center; margin-top: 50px;">
+            <div style="text-align: center; margin-top: 60px;">
                 <a href="#kontakt" class="btn">Termin anfragen</a>
             </div>
         </div>
@@ -397,16 +446,21 @@
     <section class="section about">
         <div class="container">
             <h2>Dein Weg zur Session</h2>
-            <p style="max-width: 700px; margin: 0 auto;">
-                Ich befinde mich derzeit in der fortgeschrittenen Zertifizierungsphase der TantraSOMA Ausbildung. Dies ermöglicht mir, dir diese tiefgreifenden Rituale zu einem besonderen Konditionen anzubieten.
+            <p style="max-width: 700px; margin: 0 auto 30px auto;">
+                Ich befinde mich derzeit in der fortgeschrittenen Zertifizierungsphase der TantraSOMA Ausbildung. Dies ermöglicht mir, dir diese tiefgreifenden Rituale zu besonderen Konditionen anzubieten.
             </p>
             
-            <div class="price-highlight">
-                Aktueller Einführungspreis: 120 € (für ca. 3 Stunden)
+            <div class="price-box">
+                <div class="price-highlight">
+                    Kennenlern-Angebot: 120 €
+                </div>
+                <div style="font-size: 0.9rem; color: #666; margin-top: 5px;">
+                    Dauer: ca. 3 Stunden inkl. Vorgespräch & Integration
+                </div>
             </div>
             
-            <p style="font-size: 0.9rem; margin-top: 20px;">
-                Standort: Reichenberg bei Würzburg
+            <p style="font-size: 1rem; margin-top: 10px;">
+                <strong>Standort:</strong> Reichenberg bei Würzburg
             </p>
         </div>
     </section>
@@ -415,24 +469,24 @@
     <section class="section contact" id="kontakt">
         <div class="container">
             <h2>Bereit für den ersten Schritt?</h2>
-            <p style="margin-bottom: 30px;">
-                Du musst nicht genau wissen, was du brauchst. Ein kurzes Gespräch oder eine Nachricht bringt Klarheit.
+            <p style="margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Du musst nicht genau wissen, was du brauchst. Ein kurzes Gespräch oder eine Nachricht bringt Klarheit. Ich antworte dir diskret und zeitnah.
             </p>
 
             <div class="contact-info">
-                <p>Alexander Bolz</p>
+                <p><strong>Alexander Bolz</strong></p>
                 <p>Guttenberger Str. 25, 97234 Reichenberg</p>
                 <p style="margin-top: 20px;">
                     E-Mail: <a href="mailto:altibo@posteo.de">altibo@posteo.de</a>
                 </p>
-                <!-- Tel optional hier einfügen -->
             </div>
 
             <a href="mailto:altibo@posteo.de" class="btn">Nachricht schreiben</a>
 
             <footer>
                 &copy; 2026 Alexander Bolz. Alle Rechte vorbehalten. <br>
-                <a href="#" style="font-size: 0.8rem; color: #666;">Impressum & Datenschutz</a>
+                <a href="#" style="font-size: 0.8rem; color: #666; margin-right: 10px;">Impressum</a>
+                <a href="#" style="font-size: 0.8rem; color: #666;">Datenschutz</a>
             </footer>
         </div>
     </section>

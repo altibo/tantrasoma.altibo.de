@@ -9,7 +9,7 @@
     <!-- Google Fonts für elegantes Design -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
     <style>
         /* --- FARBPALETTE & BASIS --- */
@@ -112,7 +112,7 @@
             height: 100vh;
             min-height: 700px;
             background-color: #E8E4DC;
-            /* HIER WIRD DEIN HINTERGRUNDBILD GELADEN */
+            /* Hintergrundbild mit leichtem Overlay */
             background-image: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.7)), url('hero-bg.png');
             background-size: cover;
             background-position: center;
@@ -160,7 +160,7 @@
         /* --- TRENNER BILD (PARALLAX) --- */
         .image-break {
             height: 400px;
-            /* HIER WIRD DEIN TRENNER-BILD GELADEN */
+            /* Trennerbild */
             background-image: url('separator.png'); 
             background-attachment: fixed;
             background-position: center;
@@ -169,12 +169,11 @@
             position: relative;
         }
         
-        /* Ein zarter Overlay über dem Trennerbild */
         .image-break::after {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(176, 141, 85, 0.1); /* Leichter Goldstich */
+            background: rgba(176, 141, 85, 0.1); 
         }
 
         /* --- METHODE (Authority) --- */
@@ -234,7 +233,6 @@
             font-size: 1.3rem;
             font-style: italic;
             box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            position: relative;
         }
 
         /* --- ANGEBOTE --- */
@@ -267,6 +265,61 @@
             font-family: 'Cormorant Garamond', serif;
         }
 
+        /* --- TESTIMONIAL / REZENSION --- */
+        .testimonial-section {
+            background-color: var(--white);
+            text-align: center;
+            padding: 80px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .testimonial-box {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial-box::before {
+            content: "“";
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 8rem;
+            color: var(--bg-accent);
+            position: absolute;
+            top: -60px;
+            left: -40px;
+            z-index: 0;
+        }
+
+        .stars {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            line-height: 1.4;
+            color: #555;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
+        }
+
         /* --- ABOUT & PREIS --- */
         .about {
             background-color: var(--bg-accent);
@@ -280,6 +333,7 @@
             border-radius: 8px;
             border: 1px solid var(--primary);
             margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
         .price-highlight {
@@ -328,7 +382,8 @@
             h2 { font-size: 2rem; }
             .method-grid { grid-template-columns: 1fr; }
             .hero-content { padding: 25px; margin: 0 15px; }
-            .image-break { height: 250px; background-attachment: scroll; } /* Fix für Mobile Performance */
+            .testimonial-box::before { display: none; } /* Stört auf Mobile */
+            .image-break { height: 250px; background-attachment: scroll; }
         }
     </style>
 </head>
@@ -386,8 +441,7 @@
                 
                 <!-- Profilbild & Zitat -->
                 <div class="method-quote">
-                    <!-- HIER WIRD DEIN PROFILBILD GELADEN -->
-                    <!-- Achte darauf, dass dein Bild wirklich .jpg heißt, sonst ändere es in .png -->
+                    <!-- Dein Profilbild -->
                     <img src="alexander-profil.jpg" alt="Alexander Bolz" class="profile-image">
                     
                     <div class="quote-box">
@@ -438,6 +492,20 @@
             
             <div style="text-align: center; margin-top: 60px;">
                 <a href="#kontakt" class="btn">Termin anfragen</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rezension / Testimonial -->
+    <section class="section testimonial-section">
+        <div class="container">
+            <div class="testimonial-box">
+                <div class="stars">★★★★★</div>
+                <h3 style="font-family:'Cormorant Garamond'; color:var(--primary); margin-bottom:15px; font-size:1.4rem;">"Atmen. Fühlen. Sein."</h3>
+                <p class="testimonial-text">
+                    "Alex hat ein sehr feines Gespür für Nähe und respektvolle Distanz. Ich habe mich sicher, gehalten und gut begleitet gefühlt. Es entstand ein Raum, in dem ich wirklich loslassen konnte – körperlich wie emotional. Ich konnte sogar weinen, was mir normalerweise schwerfällt. Besonders die Rückenarbeit war tiefgehend und hat alte Spannungen gelöst. Noch den ganzen Abend habe ich tief ausgeatmet – ein echter Release. Ich kann dieses Ritual von Herzen empfehlen."
+                </p>
+                <p class="testimonial-author">— Julia, 36 Jahre</p>
             </div>
         </div>
     </section>

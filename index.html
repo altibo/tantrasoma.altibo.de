@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TantraSOMA Würzburg | Alexander Bolz</title>
+    <meta name="description" content="TantraSOMA Körperarbeit in Würzburg. Berührung, die das Nervensystem reguliert und Heilung ermöglicht. Yoni, Lingam & Roseta Healing.">
+    
+    <!-- Google Fonts für elegantes Design -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- FARBPALETTE & BASIS --- */
+        :root {
+            --bg-light: #FAF9F6;      /* Helles Creme/Off-White */
+            --bg-accent: #F2EFE9;     /* Etwas dunkleres Beige für Sektions-Wechsel */
+            --text-main: #4A4A4A;     /* Weiches Dunkelgrau statt hartem Schwarz */
+            --text-light: #7A7A7A;
+            --primary: #B08D55;       /* Kupfer/Gold Ton für Akzente */
+            --primary-hover: #967642;
+            --white: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+            font-size: 18px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            line-height: 1.2;
+            color: #2C2C2C;
+        }
+
+        h1 { font-size: 3.5rem; margin-bottom: 20px; }
+        h2 { font-size: 2.5rem; margin-bottom: 30px; text-align: center; }
+        h3 { font-size: 1.8rem; margin-bottom: 15px; }
+
+        a { text-decoration: none; color: inherit; }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- BUTTONS --- */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 15px 35px;
+            border-radius: 50px; /* Runde, weiche Buttons */
+            font-family: 'Lato', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(176, 141, 85, 0.2);
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(176, 141, 85, 0.3);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        /* --- HEADER --- */
+        header {
+            padding: 20px 0;
+            position: absolute;
+            width: 100%;
+            z-index: 100;
+            top: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--text-main);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            min-height: 700px;
+            background-color: #E8E4DC; /* Fallback Farbe */
+            /* HIER BILD EINFÜGEN: url('dein-bild.jpg') */
+            background-image: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.7)); 
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 40px;
+            /* Glas-Effekt für bessere Lesbarkeit */
+            background: rgba(255, 255, 255, 0.3); 
+            backdrop-filter: blur(5px);
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+
+        .subline {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            color: #555;
+            font-weight: 300;
+        }
+
+        /* --- INTRO / PROBLEM --- */
+        .section {
+            padding: 100px 0;
+        }
+
+        .intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .intro p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        /* --- METHODE (Authority) --- */
+        .method {
+            background-color: var(--bg-accent);
+        }
+
+        .method-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .method-text ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .method-text li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .method-text li::before {
+            content: "•";
+            color: var(--primary);
+            font-size: 2rem;
+            position: absolute;
+            left: 0;
+            top: -8px;
+        }
+
+        .quote-box {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 4px;
+            border-left: 4px solid var(--primary);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-style: italic;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        }
+
+        /* --- ANGEBOTE --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 8px;
+            transition: transform 0.3s;
+            border: 1px solid #eee;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+            border-color: var(--primary);
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* --- ABOUT & PREIS --- */
+        .about {
+            background-color: var(--bg-accent);
+            text-align: center;
+        }
+
+        .price-highlight {
+            font-size: 1.5rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin: 20px 0;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* --- KONTAKT / FOOTER --- */
+        .contact {
+            text-align: center;
+            background-color: #2C2C2C;
+            color: var(--bg-light);
+        }
+        
+        .contact h2 { color: var(--bg-light); }
+
+        .contact-info {
+            margin-bottom: 40px;
+            font-size: 1.2rem;
+        }
+
+        .contact-info a {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            .method-grid { grid-template-columns: 1fr; }
+            .hero-content { padding: 20px; }
+            .nav-links { display: none; } /* Vereinfachung für Mobile */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">ALEXANDER BOLZ | TANTRA<span style="color:var(--primary)">SOMA</span></div>
+                <!-- Optional: Navigation Links hier einfügen -->
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>TantraSOMA in Würzburg:<br>Wo dein Nervensystem zur Ruhe kommt</h1>
+            <p class="subline">
+                Entdecke eine Berührung, die nicht fordert, sondern befreit. Vom Funktionieren ins Fühlen – ein sicherer Raum für deinen Körper, deine Grenzen und deine Lebensenergie.
+            </p>
+            <a href="#kontakt" class="btn">Kostenloses Vorgespräch vereinbaren</a>
+        </div>
+    </section>
+
+    <!-- Problem & Intro -->
+    <section class="section intro">
+        <div class="container">
+            <h2>Sehnst du dich nach mehr als nur Entspannung?</h2>
+            <p>
+                Im Alltag funktionieren wir oft nur noch. Unser Körper ist im „Dauer-Alarmzustand“, wir verlieren den Kontakt zu unserer eigenen Lebendigkeit. Vielleicht spürst du Blockaden, alte Anspannungen oder einfach den Wunsch, dich wieder als ganzer, fühlender Mensch zu erleben – jenseits von Rollen und Erwartungen.
+            </p>
+            <p>
+                TantraSOMA ist keine gewöhnliche Massage. Es ist ein <strong>Ritual der körperorientierten Heilung</strong>. Wir nutzen achtsame Berührung und Atemarbeit, um dein Nervensystem von Kampf oder Flucht in einen Zustand von Sicherheit und Flow zu begleiten.
+            </p>
+        </div>
+    </section>
+
+    <!-- Methode / Authority -->
+    <section class="section method">
+        <div class="container">
+            <div class="method-grid">
+                <div class="method-text">
+                    <h2>Ein sicherer Raum für deine Transformation</h2>
+                    <p>Meine Arbeit basiert auf der TantraSOMA™-Methode, die tantrische Weisheit mit moderner Trauma- und Körperarbeit verbindet. Anders als bei herkömmlichen Massagen geht es nicht um ein „Happy End“, sondern um:</p>
+                    <ul>
+                        <li><strong>Nervensystem Regulation:</strong> Langsame, wellenförmige Berührungen laden den Parasympathikus ein – den Teil in dir, der für Regeneration und Vertrauen zuständig ist.</li>
+                        <li><strong>Trauma-Sensibilität:</strong> Wir arbeiten mit verschiedenen Berührungsqualitäten, damit dein Körper lernt, alte Speicherungen loszulassen und neue Muster von Sicherheit zu integrieren.</li>
+                        <li><strong>Konsens & Grenzen:</strong> Jede Session ist ein Dialog. Grenzen schaffen den Raum, in dem sich wahre Hingabe erst entfalten kann.</li>
+                    </ul>
+                </div>
+                <div class="method-quote">
+                    <div class="quote-box">
+                        "In meinen Sessions bin ich weniger 'Macher' als Begleiter. Es ist mir wichtig, Menschen nicht zu reparieren, sondern sie darin zu unterstützen, ihre eigene Stimme und innere Führung wiederzufinden."
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Angebote -->
+    <section class="section" id="angebote">
+        <div class="container">
+            <h2>Meine Angebote</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 40px auto;">
+                Jede Session ist ein individuelles Ritual (ca. 3 Stunden). Wir entscheiden im Vorgespräch, welches Setting für dich passt.
+            </p>
+            
+            <div class="services-grid">
+                <!-- Card 1 -->
+                <div class="service-card">
+                    <div class="service-icon">✦</div>
+                    <h3>Rücken & Körperarbeit</h3>
+                    <p>Der ideale Einstieg. Wir lösen den „Panzer“ entlang der Wirbelsäule und bringen die Energie ins Fließen. Perfekt, um Vertrauen in die Berührung zu fassen.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="service-card">
+                    <div class="service-icon">⚘</div>
+                    <h3>Yoni Healing</h3>
+                    <p>(Für Frauen) Ein Ritual der Verehrung. Die Yoni wird als „Tempel“ berührt. Wir lösen sanft gespeicherte Emotionen und laden Licht und Weichheit in diesen heiligen Raum ein.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="service-card">
+                    <div class="service-icon">∆</div>
+                    <h3>Lingam Healing</h3>
+                    <p>(Für Männer) Ein Ritual der Präsenz. Wir entkoppeln Sexualität von Zielorientierung und Leistung. Der Lingam darf einfach sein, verbunden mit dem Herzen.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="service-card">
+                    <div class="service-icon">◎</div>
+                    <h3>Roseta Healing</h3>
+                    <p>Arbeit am Wurzelchakra. Durch achtsame, respektvolle Berührung kann hier tiefes Urvertrauen und Erdung zurückgewonnen werden – oft ein Ort großer Transformation.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="#kontakt" class="btn">Termin anfragen</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Über Mich & Preis -->
+    <section class="section about">
+        <div class="container">
+            <h2>Dein Weg zur Session</h2>
+            <p style="max-width: 700px; margin: 0 auto;">
+                Ich befinde mich derzeit in der fortgeschrittenen Zertifizierungsphase der TantraSOMA Ausbildung. Dies ermöglicht mir, dir diese tiefgreifenden Rituale zu einem besonderen Konditionen anzubieten.
+            </p>
+            
+            <div class="price-highlight">
+                Aktueller Einführungspreis: 120 € (für ca. 3 Stunden)
+            </div>
+            
+            <p style="font-size: 0.9rem; margin-top: 20px;">
+                Standort: Reichenberg bei Würzburg
+            </p>
+        </div>
+    </section>
+
+    <!-- Kontakt / Footer -->
+    <section class="section contact" id="kontakt">
+        <div class="container">
+            <h2>Bereit für den ersten Schritt?</h2>
+            <p style="margin-bottom: 30px;">
+                Du musst nicht genau wissen, was du brauchst. Ein kurzes Gespräch oder eine Nachricht bringt Klarheit.
+            </p>
+
+            <div class="contact-info">
+                <p>Alexander Bolz</p>
+                <p>Guttenberger Str. 25, 97234 Reichenberg</p>
+                <p style="margin-top: 20px;">
+                    E-Mail: <a href="mailto:altibo@posteo.de">altibo@posteo.de</a>
+                </p>
+                <!-- Tel optional hier einfügen -->
+            </div>
+
+            <a href="mailto:altibo@posteo.de" class="btn">Nachricht schreiben</a>
+
+            <footer>
+                &copy; 2026 Alexander Bolz. Alle Rechte vorbehalten. <br>
+                <a href="#" style="font-size: 0.8rem; color: #666;">Impressum & Datenschutz</a>
+            </footer>
+        </div>
+    </section>
+
+</body>
+</html>

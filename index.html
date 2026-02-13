@@ -382,6 +382,35 @@
             border-bottom-color: var(--primary);
         }
 
+        .whatsapp-contact {
+            margin: 30px auto 35px auto;
+            max-width: 420px;
+        }
+
+        .whatsapp-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 22px;
+            border-radius: 999px;
+            border: 1px solid var(--primary);
+            color: var(--bg-light);
+            background: rgba(176, 141, 85, 0.12);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .whatsapp-link:hover {
+            background: rgba(176, 141, 85, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .whatsapp-logo {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            fill: currentColor;
+        }
+
         footer {
             margin-top: 80px;
             padding-top: 20px;
@@ -564,6 +593,14 @@
                 <p><strong>Alexander Bolz</strong></p>
                 <p>Guttenberger Str. 25, 97234 Reichenberg</p>
                 <p style="margin-top: 20px;">E-Mail: <a href="mailto:kontakt@altibo.de">kontakt@altibo.de</a></p>
+            </div>
+            <div class="whatsapp-contact">
+                <a href="https://wa.me/4915562862516" class="whatsapp-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Kontakt öffnen">
+                    <svg class="whatsapp-logo" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12.04 2C6.57 2 2.13 6.44 2.13 11.91c0 1.75.46 3.45 1.33 4.95L2 22l5.3-1.39c1.45.79 3.08 1.21 4.74 1.21h.01c5.47 0 9.91-4.45 9.91-9.92A9.9 9.9 0 0 0 12.04 2Zm5.78 14.02c-.24.67-1.41 1.24-1.95 1.32-.5.07-1.13.1-1.83-.13-.43-.14-.98-.32-1.69-.63-2.98-1.29-4.93-4.28-5.08-4.48-.15-.2-1.21-1.61-1.21-3.07s.77-2.18 1.04-2.48c.27-.3.6-.37.8-.37.2 0 .4 0 .58.01.19.01.45-.07.7.54.24.59.83 2.04.91 2.19.07.15.12.33.02.53-.1.2-.15.33-.3.5-.15.17-.31.38-.44.5-.15.15-.3.32-.13.62.17.3.77 1.27 1.65 2.06 1.14 1.02 2.1 1.33 2.4 1.48.3.15.47.13.65-.08.17-.2.72-.83.91-1.12.19-.29.39-.24.65-.14.27.1 1.69.8 1.98.95.29.15.49.22.56.34.07.12.07.7-.17 1.37Z"/>
+                    </svg>
+                    <span>WhatsApp: +49 15562 862516</span>
+                </a>
             </div>
             <a href="mailto:kontakt@altibo.de" class="btn">Nachricht schreiben</a>
         </div>

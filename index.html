@@ -367,8 +367,58 @@
         }
 
         .contact-info {
-            margin-bottom: 40px;
-            font-size: 1.2rem;
+            margin: 0 auto;
+            max-width: 620px;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 14px;
+            padding: 28px 24px;
+            text-align: left;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--bg-light);
+            margin-bottom: 4px;
+        }
+
+        .contact-address {
+            color: #c8c8c8;
+            margin-bottom: 22px;
+        }
+
+        .contact-list {
+            display: grid;
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+
+        .contact-item {
+            display: grid;
+            grid-template-columns: 115px 1fr;
+            gap: 12px;
+            align-items: baseline;
+            padding: 10px 12px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .contact-label {
+            color: #bdbdbd;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .contact-value {
+            color: var(--bg-light);
+            font-size: 1.08rem;
+            font-weight: 600;
         }
 
         .contact-info a {
@@ -382,26 +432,36 @@
             border-bottom-color: var(--primary);
         }
 
-        .whatsapp-contact {
-            margin: 30px auto 35px auto;
-            max-width: 420px;
+        .contact-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
-        .whatsapp-link {
+        .action-link {
             display: inline-flex;
             align-items: center;
             gap: 12px;
-            padding: 14px 22px;
+            padding: 12px 18px;
             border-radius: 999px;
             border: 1px solid var(--primary);
             color: var(--bg-light);
             background: rgba(176, 141, 85, 0.12);
             transition: background-color 0.3s ease, transform 0.3s ease;
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
         }
 
-        .whatsapp-link:hover {
+        .action-link:hover {
             background: rgba(176, 141, 85, 0.2);
             transform: translateY(-2px);
+            border-bottom-color: var(--primary);
+        }
+
+        .action-link.email {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.25);
         }
 
         .whatsapp-logo {
@@ -445,6 +505,24 @@
             .image-break {
                 height: 250px;
                 background-attachment: scroll;
+            }
+
+            .contact-card {
+                padding: 22px 16px;
+            }
+
+            .contact-item {
+                grid-template-columns: 1fr;
+                gap: 4px;
+            }
+
+            .contact-actions {
+                flex-direction: column;
+            }
+
+            .action-link {
+                justify-content: center;
+                width: 100%;
             }
         }
 
@@ -590,19 +668,35 @@
             <h2>Bereit für den ersten Schritt?</h2>
             <p style="margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">Du musst nicht genau wissen, was du brauchst. Ein kurzes Gespräch bringt Klarheit. Ich antworte diskret und zeitnah.</p>
             <div class="contact-info">
-                <p><strong>Alexander Bolz</strong></p>
-                <p>Guttenberger Str. 25, 97234 Reichenberg</p>
-                <p style="margin-top: 20px;">E-Mail: <a href="mailto:kontakt@altibo.de">kontakt@altibo.de</a></p>
+                <div class="contact-card">
+                    <p class="contact-name">Alexander Bolz</p>
+                    <p class="contact-address">Guttenberger Str. 25, 97234 Reichenberg</p>
+                    <div class="contact-list">
+                        <div class="contact-item">
+                            <span class="contact-label">E-Mail</span>
+                            <a class="contact-value" href="mailto:kontakt@altibo.de">kontakt@altibo.de</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">Handy</span>
+                            <a class="contact-value" href="tel:+4915562862516">+49 15562 862516</a>
+                        </div>
+                    </div>
+                    <div class="contact-actions">
+                        <a href="https://wa.me/4915562862516" class="action-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Kontakt öffnen">
+                            <svg class="whatsapp-logo" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12.04 2C6.57 2 2.13 6.44 2.13 11.91c0 1.75.46 3.45 1.33 4.95L2 22l5.3-1.39c1.45.79 3.08 1.21 4.74 1.21h.01c5.47 0 9.91-4.45 9.91-9.92A9.9 9.9 0 0 0 12.04 2Zm5.78 14.02c-.24.67-1.41 1.24-1.95 1.32-.5.07-1.13.1-1.83-.13-.43-.14-.98-.32-1.69-.63-2.98-1.29-4.93-4.28-5.08-4.48-.15-.2-1.21-1.61-1.21-3.07s.77-2.18 1.04-2.48c.27-.3.6-.37.8-.37.2 0 .4 0 .58.01.19.01.45-.07.7.54.24.59.83 2.04.91 2.19.07.15.12.33.02.53-.1.2-.15.33-.3.5-.15.17-.31.38-.44.5-.15.15-.3.32-.13.62.17.3.77 1.27 1.65 2.06 1.14 1.02 2.1 1.33 2.4 1.48.3.15.47.13.65-.08.17-.2.72-.83.91-1.12.19-.29.39-.24.65-.14.27.1 1.69.8 1.98.95.29.15.49.22.56.34.07.12.07.7-.17 1.37Z"/>
+                            </svg>
+                            <span>WhatsApp schreiben</span>
+                        </a>
+                        <a href="tel:+4915562862516" class="action-link" aria-label="Jetzt anrufen">
+                            <span>Anrufen</span>
+                        </a>
+                        <a href="mailto:kontakt@altibo.de" class="action-link email" aria-label="E-Mail senden">
+                            <span>E-Mail senden</span>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="whatsapp-contact">
-                <a href="https://wa.me/4915562862516" class="whatsapp-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Kontakt öffnen">
-                    <svg class="whatsapp-logo" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M12.04 2C6.57 2 2.13 6.44 2.13 11.91c0 1.75.46 3.45 1.33 4.95L2 22l5.3-1.39c1.45.79 3.08 1.21 4.74 1.21h.01c5.47 0 9.91-4.45 9.91-9.92A9.9 9.9 0 0 0 12.04 2Zm5.78 14.02c-.24.67-1.41 1.24-1.95 1.32-.5.07-1.13.1-1.83-.13-.43-.14-.98-.32-1.69-.63-2.98-1.29-4.93-4.28-5.08-4.48-.15-.2-1.21-1.61-1.21-3.07s.77-2.18 1.04-2.48c.27-.3.6-.37.8-.37.2 0 .4 0 .58.01.19.01.45-.07.7.54.24.59.83 2.04.91 2.19.07.15.12.33.02.53-.1.2-.15.33-.3.5-.15.17-.31.38-.44.5-.15.15-.3.32-.13.62.17.3.77 1.27 1.65 2.06 1.14 1.02 2.1 1.33 2.4 1.48.3.15.47.13.65-.08.17-.2.72-.83.91-1.12.19-.29.39-.24.65-.14.27.1 1.69.8 1.98.95.29.15.49.22.56.34.07.12.07.7-.17 1.37Z"/>
-                    </svg>
-                    <span>WhatsApp: +49 15562 862516</span>
-                </a>
-            </div>
-            <a href="mailto:kontakt@altibo.de" class="btn">Nachricht schreiben</a>
         </div>
         <footer>
             &copy; 2026 Alexander Bolz. Alle Rechte vorbehalten.<br>
